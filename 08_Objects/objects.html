@@ -77,6 +77,29 @@
 
       console.log(typeof console.log) // So 'log' is a function saved inside an object called 'console'
 
+
+      // JSON(JavaScript object notation) Built-in Object. JSON doesn't support functions.
+
+
+
+      // Converting JS object (product2) to JSON
+
+      console.log(JSON.stringify(product2)); // output is in string
+
+      console.log(typeof JSON.stringify(product2));
+
+
+      // converting JSON to JS object
+
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+
+
+      // localStorage built in object. It is used to save values more permanently.
+
+      // Variables are temporary. If we refresh/ close the page, all the variables are deleted.
+
+      
     </script>
 
   </body>
