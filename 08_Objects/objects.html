@@ -45,7 +45,7 @@
       1) let us group multiple values together
       2) let us use multiple values together
       
-      */ 
+      
 
       
       const product2 = {
@@ -99,7 +99,63 @@
 
       // Variables are temporary. If we refresh/ close the page, all the variables are deleted.
 
-      
+      */ 
+
+
+      console.log('hello'.length);
+
+      console.log('hello'.toUpperCase());
+      // How can strings have properties and methods? Answer is, JavaScript has a special method called "Auto-boxing." JavaScript automatically wraps this string in a special object first, and this object has the property length and the method to uppercase. So this is done automatically. Auto-boxing works with numbers and bools but it doesn't work with 'null' and 'undefined'. It will just give us an error.
+
+      // Objects are references. 
+
+      const object1 = {
+        messgae: 'hello'
+      }; // when we create this object, the actual value i.e. " message: 'hello' " is created somewhere in the computer's memory, and "object1" variable actually just gets a reference that points to that location in the computers memory. 
+
+      const object2 = object1; // So this code doesn't make copy of above code. It just makes a copy of the reference that points to the object. This is called "Copy by Reference."
+
+      object1.messgae = 'Good job!'
+
+      console.log(object1); // Even though we created "object1" with "const" we can change the values of property because, "object1" just contains reference and not original value. So "const" just prevent us for referrence but it does not prevent us to change the values in the reference.
+
+      console.log(object2);
+
+      // We can't compare objects directly. 
+
+      const object3 = {
+        messgae: 'Good job!'
+      };
+
+      console.log(object3 === object1); // objects are references. Both references are different and that's why they are not same.
+
+      console.log(object2 === object1); // because they have same reference. 
+
+      const object4 = {
+        message: 'Good job!',
+        price: 799
+      };
+      // const message = object4.messgae;
+
+      const { message, price } = object4; // This line of code basically means, value of  "message" and "price" attribute from "object4" will be saved in a variable called "message" and "price".
+      console.log(message);
+      console.log(price);
+
+      const object5 = {
+        // message: message
+        message, // this is called "Shorthand property"
+        
+        //method: function function1() {
+         // console.log('method')
+       // }
+
+        method() { // same as above function. It is called "Shorthand Method"
+          console.log('method')
+        }
+       }
+
+      console.log(object5);
+      object5.method();
     </script>
 
   </body>
