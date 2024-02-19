@@ -25,6 +25,7 @@
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
+    localStorage.removeItem('score');
     ">Reset Score</button>
 
     <script>
@@ -38,14 +39,21 @@
       4) Display the result and score in a popup.  
       */
 
-      const score = {
-        wins: 0,
-        losses: 0,
-        ties: 0
-      };
+      let score = JSON.parse(localStorage.getItem('score'));
+
+      if (score === null) {
+        score = {
+          wins: 0,
+          losses: 0,
+          ties: 0
+        };
+      } // Why this step? Because we remove value from localStorage and when nothing is present in the local storage, it stores as NULL. Due to this, we can run code line 92 because JS can't access score === null. To overcome this issue, we need to give default value to score if nothing is present in the local storage. That's why this 'if' statement.
+      
+      // we are referring 'score' from line 97. We are using JSON.parse() to convert string into object. 
 
       /* Why are we creating a object outside a function?
-       That's because every time we make a move, we need to update the score from last time. So in order to save the score from last time, we need to keep it outside the function. If the score was inside the function the function would create a new score every tim, which is not what we want. So in this situation, in order to save a score from last time, we are going to keep this variable outside. */
+       That's because every time we make a move, we need to update the score from last time. So in order to save the score from last time, we need to keep it outside the function. If the score was inside the function the function would create a new score every tim, which is not what we want. So in this situation, in order to save a score from last time, we are going to keep this variable outside. 
+      */
 
       function playGmae (playerMove) {
         const computerMove = (pickComputerMove());
@@ -88,9 +96,13 @@
         } else if (result === 'Tie.') {
           score.ties += 1;
         }
+
+        // After updating the score we are going to save that score in localStorage becasue if we refresh our page right now meaning withour localStorage then it will reset our score which was before refresh. We want to retain the score even after refreshing the page.
+
+        localStorage.setItem('score',JSON.stringify(score)); // So we are saving 'hello' in the local storage and we can get that value or that 'hello' using 'messgae'. localStorage only support strings to store and that's why we are using JSON.stringify because it will convert 'score' object into string.
     
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}.
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
       }
 
       function pickComputerMove() {
