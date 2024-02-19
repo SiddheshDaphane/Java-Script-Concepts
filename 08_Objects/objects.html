@@ -23,9 +23,26 @@
 
       console.log(product.price); // Same as above line of code. 
 
-      product.name = 'cotton socks' // This changes the value of a property. First it was 'socks' and now it is 'cotton socks'
+      product.name = 'cotton socks'; // This changes the value of a property. First it was 'socks' and now it is 'cotton socks'
 
-      console.log(product)
+      console.log(product);
+
+      console.log(product.sales); // This will give output as "undefined"
+
+      product.newProperty = true; // This is use to add new property with it's value
+
+      console.log(product); // New property will be in the output.
+
+      delete product.newProperty; // This will delete "newProperty"
+
+      console.log(product); // "newProperty" will not come in the output.
+
+      console.log(typeof product); // "product" is an object.
+
+      /* Objects: 
+      1) let us group multiple values together
+      2) let us use multiple values together
+      */
 
     </script>
 
