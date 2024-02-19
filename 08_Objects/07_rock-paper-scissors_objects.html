@@ -39,15 +39,25 @@
       4) Display the result and score in a popup.  
       */
 
-      let score = JSON.parse(localStorage.getItem('score'));
+      let score = JSON.parse(localStorage.getItem('score')) || 
+      {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      }; // So if score is not null then right side will work and if score is null then left side will work. It is same as 'if' statement as below. 
 
+      /*
       if (score === null) {
         score = {
           wins: 0,
           losses: 0,
           ties: 0
         };
-      } // Why this step? Because we remove value from localStorage and when nothing is present in the local storage, it stores as NULL. Due to this, we can run code line 92 because JS can't access score === null. To overcome this issue, we need to give default value to score if nothing is present in the local storage. That's why this 'if' statement.
+        
+      } 
+      */
+
+      // Why this step? Because we remove value from localStorage and when nothing is present in the local storage, it stores as NULL. Due to this, we can run code line 92 because JS can't access score === null. To overcome this issue, we need to give default value to score if nothing is present in the local storage. That's why this 'if' statement.
       
       // we are referring 'score' from line 97. We are using JSON.parse() to convert string into object. 
 
