@@ -10,6 +10,8 @@
 
     <script>
 
+      /* 
+
       const product = {
         name: 'socks',
         price: 1090
@@ -42,7 +44,26 @@
       /* Objects: 
       1) let us group multiple values together
       2) let us use multiple values together
-      */
+      
+      */ 
+
+      
+      const product2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day'
+      };
+      console.log(product2);
+
+      console.log(product2['name']); // does same thing as 'product2.name'.
+
+      // '[]' lets us use properties that don't work with dot notation.
+
+      console.log(product2['delivery-time']);
+
+
+      console.log(product2.delivery-time); // we can't use .delivery-time because JavaScript thinks that '-' is a minus sign and that's why in the out it is giving an error instead of undefined. 
+
+      
 
     </script>
 
