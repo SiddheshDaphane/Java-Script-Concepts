@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exc 3</title>
+  </head>
+
+  <body>  
+    <script>
+      function isSameProduct(product1,product2) {
+        if (
+          product1.name === product2.name &&
+          product2.price === product2.price
+        ) {
+          return true
+        } else {
+          return false
+        }
+      };
+
+      const product1 = {
+        name: 'Shirt',
+        price: 80
+      };
+
+      const product2 = {
+        name: 'socks',
+        price: 30
+      };
+
+      const product3 = {
+        name: 'Shirt',
+        price: 80
+      };
+      console.log(isSameProduct(product1,product3));
+      console.log(isSameProduct(product1,product2));
+    </script>
+  </body>
+</html>
