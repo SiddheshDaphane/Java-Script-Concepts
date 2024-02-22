@@ -27,6 +27,14 @@
                 Notification
     </button>
 
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input">
+
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+
+    <p class="js-total-cost"></p>
 
     <script>
       function subscribe() {
@@ -47,6 +55,20 @@
         } else {
           buttonElement1.innerHTML = 'Notification'
         };
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value); // Whenever we get a value from the DOM, the value will be a string.
+        console.log(cost);
+        if (cost < 40) {
+          cost = cost + 10;
+          console.log(cost);
+          console.log(typeof cost)
+        }
+
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`
       }
     </script>
 
