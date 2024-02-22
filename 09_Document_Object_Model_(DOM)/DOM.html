@@ -8,19 +8,61 @@
 
   <body>
     <button>Hello</button>
+    <button class="js-button">Second button</button>
 
 
     <script>
-      document.body.innerHTML = 'Hello'; // This code removes everything on page and replaces it with text 'hello'. So in this code, it will remove the button and replace it with 'hello'. 
+
+
+      console.log(document.querySelector('button'));
+      // lets us get any element from the page and put it isnide JavaScript
+      // "querySelector('button')" this means we get FIRST 'button' element from the page
+
+      console.log(document.querySelector('button').innerHTML);
+
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+
+      const buttonElement = (document.querySelector('.js-button'));
+      console.log(buttonElement);
+      
+
+      console.log(document.title);
+      document.title = 'Changed';
+
+      console.log(document.body);
+      // This is very special property. This will literally copy "body" HTML element and put it inside our JavaScript.
+      // This means we can have HTML elements inside JavaScript. The DOM combines JavaScript and HTML together.
+      // When HTML element is copied in JS, it is converted into a JS object. 
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+      // So inner HTML property controls all the HTML inside the body. That's why it is called innerHTML.
+
+      document.body.innerHTML = 'Changed';
+
+      // Another property of 'innerHTML' is that we can change HTML inside body with another HTML.
+
+      document.body.innerHTML = '<button>Good Job</button>'
+      
+
+
+      
+
+      document.body.innerHTML = 'Hello'; 
+      // This code removes everything on page and replaces it with text 'hello'. So in this code, it will remove the button and replace it with 'hello'. 
       // "document" is a built in object
       // ".body" means we are accessing property of document called 'body'. 'body' is also an object.
       // ".innerHTML" is accessing property of 'body' object called 'innerHTML'.
       // "= 'hello'" means we are changing "innerHTML" property to "hello".
       // When we change "innerHTML" property, it also changes the webpage which means "document" object and web-page are connected somehow. 
 
-      document.title = 'Good job' // Same explanation as above. 
+      document.title = 'Good job'; 
+      // Same explanation as above. 
 
       // This suggests that the document object mpdels the webpage.
+
+      
     </script>
 
   </body>
