@@ -12,33 +12,42 @@
 
 
     <!-- 'innerHTML' will calculate spaces also and that's why it is IMP to have same name in 'if' condition. -->
-    <button onclick="
-      const buttonElement = document.querySelector('.js-subscribe-button');
 
-      if (buttonElement.innerHTML === 'Subscribe') {
-        buttonElement.innerHTML = 'Subscribed'
-      } else {
-        buttonElement.innerHTML = 'Subscribe'
-      };
+    <button onclick="
+      subscribe()
     " class="js-subscribe-button">Subscribe</button>
 
 
 
-      <!-- 'innerText' just take 'text' and ignore all spaces and hence we don't have to worry about extra spaces-->
+    <!-- 'innerText' just take 'text' and ignore all spaces and hence we don't have to worry about extra spaces-->
       
     <button onclick="
-      const buttonElement1 = document.querySelector('.js-subscribe-button1');
-
-      if (buttonElement1.innerText === 'Notification') {
-        buttonElement1.innerHTML = 'Notified'
-      } else {
-        buttonElement1.innerHTML = 'Notification'
-      };
+      notification()
     " class="js-subscribe-button1">
-                Notification</button>
+                Notification
+    </button>
+
 
     <script>
-      
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerHTML === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed'
+        } else {
+          buttonElement.innerHTML = 'Subscribe'
+        };
+      }
+
+      function notification() {
+        const buttonElement1 = document.querySelector('.js-subscribe-button1');
+
+        if (buttonElement1.innerText === 'Notification') {
+          buttonElement1.innerHTML = 'Notified'
+        } else {
+          buttonElement1.innerHTML = 'Notification'
+        };
+      }
     </script>
 
   </body>
