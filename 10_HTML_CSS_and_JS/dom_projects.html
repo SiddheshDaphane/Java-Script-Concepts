@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM Projects</title>
+    <style>
+
+      body {
+        font-family: Arial;
+      }
+
+      .subscribe-button {
+        border: none;
+        color: white;
+        background-color: black;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 13px;
+        padding-right: 13px;
+        border-radius: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+      
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .calculate-button {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 12px 15px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+
+  <body>
+    
+    <p>YouTube Subscribe Button</p>
+
+
+    <!-- 'innerHTML' will calculate spaces also and that's why it is IMP to have same name in 'if' condition. -->
+
+    <button onclick="
+      subscribe()
+    " class="js-subscribe-button subscribe-button">Subscribe</button>
+
+
+
+    <!-- 'innerText' just take 'text' and ignore all spaces and hence we don't have to worry about extra spaces-->
+      
+    <button onclick="
+      notification()
+    " class="js-subscribe-button1">
+                Notification
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
+      handleCostKeydown(event);
+    ">  <!-- 'onclick' and 'onkeydown' are event listeners-->
+
+    <button onclick="
+      calculateTotal();
+    " class="calculate-button">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+
+      /*
+      String(25)
+      console.log('25'- 5);
+      console.log('25' + 5);
+
+      window.document
+      window.console.log('window');
+      window.alert
+
+      */
+     
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+      }
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerHTML === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed')
+          // '.classList' = gives us control of the class attribute. So basically we are trying to change the 'subscribe' button after clicking on it. And one of the solution for that is to 1) add a class and that class have different styles which will be applied.
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed');
+        };
+      }
+
+      function notification() {
+        const buttonElement1 = document.querySelector('.js-subscribe-button1');
+
+        if (buttonElement1.innerText === 'Notification') {
+          buttonElement1.innerHTML = 'Notified'
+        } else {
+          buttonElement1.innerHTML = 'Notification'
+        };
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value); // Whenever we get a value from the DOM, the value will be a string. 'Number' function is converting that string into number.
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`
+      }
+    </script>
+
+  </body>
+
+
+</html>
