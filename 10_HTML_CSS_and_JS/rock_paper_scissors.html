@@ -16,7 +16,16 @@
 
       .move-icon {
         height: 50px;
-        
+      }
+
+      .move-button {
+        background-color: transparent ;
+        border: 3px solid white;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-right: 10px;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -27,17 +36,21 @@
 
     <button onclick="
      playGmae('rock');
-    ">
-    <img src="images/rock-emoji.png" class="move-icon">
-  </button>
+      " class="move-button">
+      <img src="images/rock-emoji.png" class="move-icon">
+    </button>
 
     <button onclick="
       playGmae('paper');
-    ">Paper</button>
+      " class="move-button">
+      <img src="images/paper-emoji.png" class="move-icon">
+    </button>
 
     <button onclick="
       playGmae('scissors');
-    ">Scissors</button>
+      " class="move-button">
+      <img src="images/scissors-emoji.png" class="move-icon">
+    </button>
 
     <p class="js-result"></p>
 
