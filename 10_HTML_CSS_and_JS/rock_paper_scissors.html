@@ -27,6 +27,24 @@
         margin-right: 10px;
         cursor: pointer;
       }
+
+      .result {
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 50px;
+      }
+
+      .score {
+        margin-top: 60px;
+      }
+
+      .reset-score-button {
+        background-color: white;
+        border: none;
+        font-size: 15px;
+        padding: 8px 15px;
+        cursor: pointer;
+      }
     </style>
   </head>
 
@@ -52,11 +70,12 @@
       <img src="images/scissors-emoji.png" class="move-icon">
     </button>
 
-    <p class="js-result"></p>
+    <p class="js-result result"></p>
 
-    <p class="js-moves"></p>
+    <p class="js-moves">
+    </p>
 
-    <p class="js-score"></p>
+    <p class="js-score score"></p>
 
     <button onclick="
     score.wins = 0;
@@ -64,7 +83,7 @@
     score.ties = 0;
     localStorage.removeItem('score');
     updateScoreElement();
-    ">Reset Score</button>
+    " class="reset-score-button">Reset Score</button>
 
     <script>
 
@@ -158,7 +177,10 @@
           .innerHTML = result;
 
         document.querySelector('.js-moves')
-          .innerHTML = `Your move is ${playerMove} - ${computerMove} Computer move`;
+          .innerHTML = ` You 
+        <img src="images/${playerMove}-emoji.png" class="move-icon">
+        <img src="images/${computerMove}-emoji.png" class="move-icon">
+        Computer`;
       }
 
       function updateScoreElement() {
