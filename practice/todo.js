@@ -5,17 +5,22 @@
 
 const todoList = [];
 
+renderTodoList();
 
 function renderTodoList() {
   let taskList = '';
   for (let i=0; i < todoList.length; i++) {
-    const todoTask = todoList[i];
+    const todoObject = todoList[i];
+    const name = todoObject.name;
+    const comDate = todoObject.comDate;
 
     const html = `
-      <p>${todoTask}
-        <button>Completed</button>
+      <p>${name} ${comDate}
+        <button onclick =   "todoList.splice(${i},1);
+        renderTodoList();
+        ">Completed</button>
       </p>
-    `
+    `;
     taskList = taskList + html;
   }
   document.querySelector('.js-todo-list').innerHTML = taskList;
@@ -24,7 +29,15 @@ function renderTodoList() {
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
   const task = inputElement.value;
-  todoList.push(task);
+
+  const inputDate = document.querySelector('.js-due-date-input');
+
+  const dueDate = inputDate.value;
+
+  todoList.push({
+    name: task,
+    comDate: dueDate
+  });
   inputElement.value = ''
   renderTodoList();
 }
