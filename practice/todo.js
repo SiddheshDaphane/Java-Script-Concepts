@@ -5,9 +5,23 @@
 
 const todoList = [];
 
+
+function renderTodoList() {
+  let taskList = '';
+  for (let i=0; i < todoList; i++) {
+    const todoTask = todoList[i];
+
+    const html = `
+      <p>${todoTask}</p>
+    `
+    taskList = taskList + html;
+    console.log(taskList);
+  }
+}
+
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
   const task = inputElement.value;
   todoList.push(task);
-  console.log(todoList);
+  renderTodoList();
 }
