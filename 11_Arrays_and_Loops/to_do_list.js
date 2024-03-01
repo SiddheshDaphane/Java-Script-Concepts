@@ -18,7 +18,7 @@ function renderTodoList () {
       <button onclick="
         todoList.splice(${i},1);
         renderTodoList();
-      ">Delete</button> 
+      " class="delete-todo-button">Delete</button> 
       `;
       todoListHTML += html;
     }
@@ -44,6 +44,7 @@ function addTodo() {
   });
 
   inputElement.value = '';
+  dateInputElement.value = '';
   renderTodoList();
 }
 
