@@ -3,19 +3,24 @@
 
   <head>
     <title>Todo Practice</title>
+    <link rel="stylesheet" href="todo.css">
   </head>
 
   <body>
-    <p>Todo List</p>
+    <div class="todo-list">Todo List</div>
 
-    <input placeholder="Todo name" class="js-name-input">
+    <div class="container">
+      <input placeholder="Todo name" class="js-name-input name-input">
 
-    <input type="date" class="js-due-date-input">
+      <input type="date" class="js-due-date-input date-input">
 
-    <button onclick="
-      addTodo();
-    ">Add</button>
+      <input type="color" class="color-button">
 
+      <button onclick="
+        addTodo();
+      " class="add-button">Add</button>
+      
+    </div>
     <div class="js-todo-list"></div>
 
     <script src="todo.js"></script>
