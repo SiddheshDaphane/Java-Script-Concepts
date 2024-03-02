@@ -40,11 +40,14 @@ function renderTodoList() {
 
     // khalil variable madhe me 'name' and 'date' display karto ahe. and also 'completed' button takla ahe. Ithe khup IMP he baghnya sarkha ahe te mhanje 'button' madhe 'renderTodoList()' function me call karrto ahe karan jenvha completed var click kela tenvha toh task delete hote. 
     const html = `
-      <p>${name} ${comDate} 
+      <div class="output-list">
+        <div class="output-name">${name}</div> 
+        <div class="output-date">${comDate}</div> 
         <button onclick =   "todoList.splice(${i},1);
         alert('Keep Going');
         renderTodoList();
-        ">Completed</button>
+        " class="completed-button">Completed</button>
+      </div>
       </p>
     `;
     taskList = taskList + html; // Ji list saglyat pahile declear keli hoti tyachya madhe me 'html' chi value takli. 
