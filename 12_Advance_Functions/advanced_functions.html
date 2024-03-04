@@ -8,13 +8,19 @@
   <body>
     
     <script>
+      // When we use this syntax it give us an advantage of "Hoisting" meaning we can call the function before we create it in the code which is a good thing. 
+
+
       function greeting() {
         console.log('hello');
       }
       greeting();
 
+      // Functions are value
+
       const num = 2;
 
+      // When we save the fucntion in a varibale "Hoisting" doesn't work because we can't call variable before creating it.
       const function1 = function () {
         console.log('hello2');
       }
@@ -23,6 +29,7 @@
 
       function1();
 
+      // Functions are value, so that we can save them in objects. When function saved inside object, we call it as method.
       const object1 = {
         num: 2,
         fun: function greeting() {
