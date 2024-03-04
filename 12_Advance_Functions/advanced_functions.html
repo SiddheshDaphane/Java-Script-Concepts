@@ -56,12 +56,21 @@
 
 
       // So here you can see that we are calling param meaning param(); which basically means we passed function in "param" and becuase we passed function we can call it using param().
+      // The function we are passing in is called "Callback" function or a "callback".
       function run(param) {
         param();
       };
       run(function() {
         console.log('hello5')
       })
+
+      // setTimeout() is a function and we use it to run function in future. 
+      // It takes 2 parameter. 1st is the function you want run and 2nd is time in milliseconds. 1000 milliseconds = 1 sec.
+      setTimeout(function() {
+        console.log('timeout')
+      },3000);
+
+      console.log('next line') // You can see in output that 1st "next line" is printing and then "timeout". What is happening? So when I set 3 sec time in setTimeout, it starts a counting of 3 sec but immediately moves to next line which means it doesn't wait for "setTimeout" to excecute and this is called Asynchronus nature of JS which basically means, computer won't wait for a line to finish before going to the next line.
 ;    </script>
 
   </body>
