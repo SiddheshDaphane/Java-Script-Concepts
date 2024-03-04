@@ -8,7 +8,7 @@
   <body>
       <button onclick="" class="js-button">Click</button>
     <script>
-
+      /*
       const buttonElement = document.querySelector('.js-button');
 
       buttonElement.addEventListener('click', () => {
@@ -20,6 +20,8 @@
       buttonElement.addEventListener('click',eventList);
 
       buttonElement.removeEventListener('click',eventList);
+      */
+
       /*
 
       // When we use this syntax it give us an advantage of "Hoisting" meaning we can call the function before we create it in the code which is a good thing. 
@@ -164,6 +166,31 @@
       }
       */ 
 
+      // FILTER function
+      // It creates a new array[]. If function returns "TRUE" then value will go in new array and if it returns "FALSE" then value will not go in new array.
+
+      console.log([1,-3,5].filter((value, index) => {
+        /*
+        if (value >= 0) {
+          return true;
+        } else {
+          return false;
+        } */ 
+        return value >= 0;
+      }));
+
+
+      // MAP function
+
+      console.log([1,1,3].map((value, index) => {
+        return value * 2;
+      }));
+
+      console.log([1,1,3].map(value =>value * 2));
+
+      // "CLOSURE" meaning if a function has access to a value, it will always have access to that value.
+
+      
 
 ;    </script>
 
