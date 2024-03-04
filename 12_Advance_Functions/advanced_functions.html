@@ -38,6 +38,30 @@
           
       };
       object1.fun();
+
+      // As we can call function using "fun", there is no need to add name to the function.
+      const object2 = {
+        num: 3,
+        fun: function() {
+          console.log("hello4")
+        }
+      };
+      object2.fun();
+
+      // passing a value into a function. Now functions are also values, we can pass functions in function.
+      function display(param) {
+        console.log(param);
+      };
+      display(2);
+
+
+      // So here you can see that we are calling param meaning param(); which basically means we passed function in "param" and becuase we passed function we can call it using param().
+      function run(param) {
+        param();
+      };
+      run(function() {
+        console.log('hello5')
+      })
 ;    </script>
 
   </body>
