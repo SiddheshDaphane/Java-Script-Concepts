@@ -40,9 +40,14 @@
       let isAutoPlaying = false; 
       let intervalID;
 
+      //const autoPlay = () {
+
+      // }
+
+
       function autoPlay() {
         if (!isAutoPlaying) {
-          intervalID = setInterval(function() {
+          intervalID = setInterval(() => {
             const playerMove = pickComputerMove();
             playGmae(playerMove);
           }, 3000);

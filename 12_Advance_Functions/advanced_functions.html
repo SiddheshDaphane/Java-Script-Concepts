@@ -92,9 +92,53 @@
         'wash dishes',
         'watch youtube'
       ].forEach(function(value, index) {
+
+        if (value === 'wash dishes') {
+          return;
+        };
+
         console.log(index);
         console.log(value);
       });
+
+      // Arrow functions
+
+      const regularFunction = function (param, param2) {
+        console.log('hello')
+        return 5;
+      };
+
+      const arrowFunction = (param, param2) => {
+        console.log('hello');
+        return 5;
+      };
+      arrowFunction();
+
+      // When "arrow function" has only one parameter, we can write "param" instead of (param).
+
+      const oneParam = param => {
+        console.log(param + 1);
+      };
+
+      oneParam(2);
+
+      // This is one line arrow function. It will return (2+3) =5
+      const oneLine = () => 2 + 3;
+      console.log(oneLine());
+
+
+
+
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ].forEach((value, index) => {
+        if (value === 'wash dishes') {
+          return;
+        }
+        console.log(value);
+      })
 
 ;    </script>
 
