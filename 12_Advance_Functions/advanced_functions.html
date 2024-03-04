@@ -6,8 +6,20 @@
 
 
   <body>
-    
+      <button onclick="" class="js-button">Click</button>
     <script>
+
+      const buttonElement = document.querySelector('.js-button');
+
+      buttonElement.addEventListener('click', () => {
+        console.log('click');
+      });
+
+      const eventList = () => {console.log('click')};
+
+      buttonElement.addEventListener('click',eventList);
+
+      buttonElement.removeEventListener('click',eventList);
       /*
 
       // When we use this syntax it give us an advantage of "Hoisting" meaning we can call the function before we create it in the code which is a good thing. 
@@ -87,6 +99,8 @@
 
       */
 
+      /*
+
       [
         'make dinner',
         'wash dishes',
@@ -145,9 +159,11 @@
 
         },
         method() {
-          
+
         }
       }
+      */ 
+
 
 ;    </script>
 

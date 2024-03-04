@@ -58,6 +58,31 @@
         }
       }
 
+      document.querySelector('.js-rock-button')
+        .addEventListener('click', () => {
+          playGmae('rock')
+        });
+
+      document.querySelector('.js-paper-button')
+      .addEventListener('click', () => {
+        playGmae('paper')
+      });
+
+      document.querySelector('.js-scissors-button')
+      .addEventListener('click', () => {
+        playGmae('scissors')
+      });
+
+      document.body.addEventListener('keydown', (event) => {
+        if (event.key === 'r' ) {
+          playGmae('rock');
+        } else if (event.key === 'p') {
+          playGmae('paper');
+        } else if (event.key === 's') {
+          playGmae('scissors');
+        }
+      })
+
 
       function playGmae (playerMove) {
         const computerMove = (pickComputerMove());
