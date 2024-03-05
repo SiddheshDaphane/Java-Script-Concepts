@@ -48,7 +48,7 @@
       function autoPlay() {
         if (!isAutoPlaying) {
           intervalID = setInterval(() => {
-            const playerMove = pickComputerMove();
+            const playerMove = pickComputerMove(); // So we want comptuer to play against it every 3 sec and for that we need to assign "pickComputerMove()" to "playerMove" because it will select rock or paper or scissors based on "pickComptuerMove()" function. Now if you look at "playGmae" function, it takes one parameter and we are giving "playerMove" as an input which have random comptuer move and in "playGmae" function, we are comparing "playerMove" to "computerMove" and then displaying output. And because of this, this code making computer play against computer every 3 sec.
             playGmae(playerMove);
           }, 3000);
           isAutoPlaying = true;
